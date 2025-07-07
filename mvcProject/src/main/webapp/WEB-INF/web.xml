@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+                             http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+  <display-name>MBC OTT</display-name>
+
+  <!-- JSTL JSP 설정 -->
+  <jsp-config>
+    <jsp-property-group>
+      <url-pattern>*.jsp</url-pattern>
+      <page-encoding>UTF-8</page-encoding>
+    </jsp-property-group>
+  </jsp-config>
+
+  <!-- 세션 타임아웃 설정 -->
+  <session-config>
+    <session-timeout>30</session-timeout> <!-- 단위: 분 -->
+  </session-config>
+
+  <!-- 서블릿 등록 -->
+  <servlet>
+    <servlet-name>BoardController</servlet-name>
+    <servlet-class>mvc.controller.BoardController</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>BoardController</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+
+  <!-- 기본 시작 페이지 -->
+  <welcome-file-list>
+    <welcome-file>main.jsp</welcome-file>
+  </welcome-file-list>
+
+</web-app>
